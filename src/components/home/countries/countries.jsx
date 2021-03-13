@@ -11,6 +11,8 @@ class Countries extends React.Component {
   };
 
   async componentDidMount() {
+    console.log(location)
+    console.log(location[4])
     let url = `http://mondocountries.herokuapp.com/countries/${location[4]}`;
     if (location[4] === "search") {
       url = `http://mondocountries.herokuapp.com/countries/search/${location[5]}`;
