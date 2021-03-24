@@ -11,8 +11,6 @@ class Countries extends React.Component {
   };
 
   async componentDidMount() {
-    console.log(location)
-    console.log(location[4])
     let url = `http://mondocountries.herokuapp.com/countries/${location[4]}`;
     if (location[4] === "search") {
       url = `http://mondocountries.herokuapp.com/countries/search/${location[5]}`;
@@ -40,9 +38,13 @@ class Countries extends React.Component {
 
   render() {
     return (
-      <div className={style.cards}>
+      <div
+        className={
+          style.cards + " " + (this.state.loading ? style.loading : "")
+        }
+      >
         {this.state.loading ? (
-          <h1 className={style.loading}>{this.state.loading}</h1>
+          <h1>{this.state.loading}</h1>
         ) : this.state.countries.length > 0 ? (
           location[5] === "popup" || location[5] === "popdown" ? (
             this.state.countries
@@ -56,7 +58,10 @@ class Countries extends React.Component {
             })
           )
         ) : (
-          `There's no activities in the ${location[5]}.`
+          <div className={style.loading}>
+            {" "}
+            <h1>We couldn't find any matching country.</h1>
+          </div>
         )}
       </div>
     );

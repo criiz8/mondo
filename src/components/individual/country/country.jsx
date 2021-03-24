@@ -3,7 +3,7 @@ import style from "./country.module.css";
 
 const Country = ({ country, activities }) => {
   return (
-    <div className={style.data + " " + style.bd_grid}>
+    <div className={style.data}>
       <div className={style.img}>
         <img src={country.flag} />
       </div>

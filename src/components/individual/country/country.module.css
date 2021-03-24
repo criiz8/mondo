@@ -10,8 +10,7 @@
   margin-top: 2rem;
 }
 .data {
-  margin-top: 15.45rem;
-  margin-bottom: 15.45rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }

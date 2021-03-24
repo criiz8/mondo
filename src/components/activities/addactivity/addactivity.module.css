@@ -10,6 +10,16 @@
   margin-bottom: 2rem;
   text-align: left;
 }
+.min {
+  height: calc(100vh - 171px);
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+}
+.max {
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
 .input {
   width: 100%;
 }
@@ -25,7 +35,6 @@
 .title ::placeholder {
   color: #fff;
 }
-
 .button {
   background-color: #757575;
   border-radius: 0.5rem;
@@ -41,7 +50,6 @@
   width: 100%;
   display: table-cell;
 }
-
 .select {
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -66,8 +74,7 @@
   box-shadow: 0 0 12px rgb(0 0 0 / 15%);
   padding: 2rem;
   border-radius: 1rem;
-  margin-top: 4rem;
-  margin-bottom: 7.65rem;
+  margin-bottom: 0px;
 }
 .h2title {
   margin-top: 0;

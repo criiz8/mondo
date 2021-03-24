@@ -79,180 +79,185 @@ class AddActivity extends React.Component {
     this.setState({ countries: this.state.countries });
   }
   render() {
+    console.log(this.state.countries.length);
     return (
       <div>
         <Nav></Nav>
-        <div className={style.bd_grid + " " + style.form}>
-          <form onSubmit={(e) => this.handleSubmit(e)}>
-            <div className={style.margin}>
-              <h2 className={style.h2title}>Title</h2>
-              <input
-                maxLength={100}
-                placeholder="Write a title"
-                name="title"
-                className={style.input + " " + style.title}
-                onChange={this.handleChange}
-                required
-              />
-            </div>
-            <div>
-              <h2 className={style.difficultyh2}>Difficulty</h2>{" "}
-              <div className={style.difficulty}>
-                {" "}
+        <div
+          className={this.state.countries.length >= 3 ? style.max : style.min}
+        >
+          <div className={style.bd_grid + " " + style.form}>
+            <form onSubmit={(e) => this.handleSubmit(e)}>
+              <div className={style.margin}>
+                <h2 className={style.h2title}>Title</h2>
                 <input
-                  type="radio"
-                  id="star5"
-                  name="difficulty"
-                  value="5"
+                  maxLength={100}
+                  placeholder="Write a title"
+                  name="title"
+                  className={style.input + " " + style.title}
                   onChange={this.handleChange}
-                />
-                <label for="star5" title="5 stars"></label>
-                <input
-                  type="radio"
-                  id="star4"
-                  name="difficulty"
-                  value="4"
-                  onChange={this.handleChange}
-                />
-                <label for="star4" title="4 stars"></label>
-                <input
-                  type="radio"
-                  id="star3"
-                  name="difficulty"
-                  value="3"
-                  onChange={this.handleChange}
-                />
-                <label for="star3" title="3 stars"></label>
-                <input
-                  type="radio"
-                  id="star2"
-                  name="difficulty"
-                  value="2"
-                  onChange={this.handleChange}
-                />
-                <label for="star2" title="2 stars"></label>
-                <input
-                  type="radio"
-                  id="star1"
-                  name="difficulty"
-                  value="1"
-                  onChange={this.handleChange}
-                />
-                <label for="star1" title="1 star"></label>
-              </div>{" "}
-            </div>
-            <div>
-              <h2 className={style.durationh2}>Duration</h2>
-              <div>
-                <div>
-                  {this.state.duration
-                    ? this.state.duration + " minutes"
-                    : "Select a duration"}
-                </div>
-                <input
-                  type="range"
-                  min="15"
-                  max="120"
-                  step="15"
-                  name="duration"
-                  onChange={this.handleChange}
+                  required
                 />
               </div>
-            </div>
-            <div>
-              <h2>Season</h2>
-              <label>
-                <input
-                  type="radio"
-                  name="season"
-                  value="Summer"
-                  onChange={this.handleChange}
-                />{" "}
-                <FontAwesomeIcon icon={faSun} /> Summer{" "}
-              </label>{" "}
-              <label>
-                <input
-                  type="radio"
-                  name="season"
-                  value="Fall"
-                  onChange={this.handleChange}
-                />{" "}
-                <FontAwesomeIcon icon={faCanadianMapleLeaf} /> Fall{" "}
-              </label>{" "}
-              <label>
-                <input
-                  type="radio"
-                  name="season"
-                  value="Winter"
-                  onChange={this.handleChange}
-                />{" "}
-                <FontAwesomeIcon icon={faSnowflake} /> Winter{" "}
-              </label>{" "}
-              <label>
-                <input
-                  type="radio"
-                  name="season"
-                  value="Spring"
-                  onChange={this.handleChange}
-                />{" "}
-                <FontAwesomeIcon icon={faEnvira} /> Spring{" "}
-              </label>
-            </div>
-            <div>
-              <h2>
-                {this.state.countries.length > 1 ? "Countries" : "Country"}
-              </h2>{" "}
               <div>
-                {this.state.countries
-                  ? this.state.countries.map((country, index) => {
-                      return (
-                        <div key={index}>
-                          <select
-                            onChange={(e) =>
-                              this.handleCountriesChange(e, index)
-                            }
-                            value={country}
-                            className={
-                              style.input +
-                              " " +
-                              style.select +
-                              " " +
-                              style.margin
-                            }
-                            required
-                          >
-                            {" "}
-                            <option value="">Select a country</option>
-                            {this.state.countriesNames.map((country) => {
-                              return (
-                                <option value={country.country_id}>
-                                  {country.name}
-                                </option>
-                              );
-                            })}{" "}
-                          </select>
-                        </div>
-                      );
-                    })
-                  : ""}
+                <h2 className={style.difficultyh2}>Difficulty</h2>{" "}
+                <div className={style.difficulty}>
+                  {" "}
+                  <input
+                    type="radio"
+                    id="star5"
+                    name="difficulty"
+                    value="5"
+                    onChange={this.handleChange}
+                  />
+                  <label for="star5" title="5 stars"></label>
+                  <input
+                    type="radio"
+                    id="star4"
+                    name="difficulty"
+                    value="4"
+                    onChange={this.handleChange}
+                  />
+                  <label for="star4" title="4 stars"></label>
+                  <input
+                    type="radio"
+                    id="star3"
+                    name="difficulty"
+                    value="3"
+                    onChange={this.handleChange}
+                  />
+                  <label for="star3" title="3 stars"></label>
+                  <input
+                    type="radio"
+                    id="star2"
+                    name="difficulty"
+                    value="2"
+                    onChange={this.handleChange}
+                  />
+                  <label for="star2" title="2 stars"></label>
+                  <input
+                    type="radio"
+                    id="star1"
+                    name="difficulty"
+                    value="1"
+                    onChange={this.handleChange}
+                  />
+                  <label for="star1" title="1 star"></label>
+                </div>{" "}
+              </div>
+              <div>
+                <h2 className={style.durationh2}>Duration</h2>
+                <div>
+                  <div>
+                    {this.state.duration
+                      ? this.state.duration + " minutes"
+                      : "Select a duration"}
+                  </div>
+                  <input
+                    type="range"
+                    min="15"
+                    max="120"
+                    step="15"
+                    name="duration"
+                    onChange={this.handleChange}
+                  />
+                </div>
+              </div>
+              <div>
+                <h2>Season</h2>
+                <label>
+                  <input
+                    type="radio"
+                    name="season"
+                    value="Summer"
+                    onChange={this.handleChange}
+                  />{" "}
+                  <FontAwesomeIcon icon={faSun} /> Summer{" "}
+                </label>{" "}
+                <label>
+                  <input
+                    type="radio"
+                    name="season"
+                    value="Fall"
+                    onChange={this.handleChange}
+                  />{" "}
+                  <FontAwesomeIcon icon={faCanadianMapleLeaf} /> Fall{" "}
+                </label>{" "}
+                <label>
+                  <input
+                    type="radio"
+                    name="season"
+                    value="Winter"
+                    onChange={this.handleChange}
+                  />{" "}
+                  <FontAwesomeIcon icon={faSnowflake} /> Winter{" "}
+                </label>{" "}
+                <label>
+                  <input
+                    type="radio"
+                    name="season"
+                    value="Spring"
+                    onChange={this.handleChange}
+                  />{" "}
+                  <FontAwesomeIcon icon={faEnvira} /> Spring{" "}
+                </label>
+              </div>
+              <div>
+                <h2>
+                  {this.state.countries.length > 1 ? "Countries" : "Country"}
+                </h2>{" "}
+                <div>
+                  {this.state.countries
+                    ? this.state.countries.map((country, index) => {
+                        return (
+                          <div key={index}>
+                            <select
+                              onChange={(e) =>
+                                this.handleCountriesChange(e, index)
+                              }
+                              value={country}
+                              className={
+                                style.input +
+                                " " +
+                                style.select +
+                                " " +
+                                style.margin
+                              }
+                              required
+                            >
+                              {" "}
+                              <option value="">Select a country</option>
+                              {this.state.countriesNames.map((country) => {
+                                return (
+                                  <option value={country.country_id}>
+                                    {country.name}
+                                  </option>
+                                );
+                              })}{" "}
+                            </select>
+                          </div>
+                        );
+                      })
+                    : ""}
+                  <button
+                    className={style.button + " " + style.addCountry}
+                    onClick={(e) => this.addCountry(e)}
+                    type="button"
+                  >
+                    Add a country
+                  </button>
+                </div>
+              </div>
+              <div>
                 <button
-                  className={style.button + " " + style.addCountry}
-                  onClick={(e) => this.addCountry(e)}
-                  type="button"
+                  type="submit"
+                  className={style.button + " " + style.submit}
                 >
-                  Add a country
+                  Submit the activity
                 </button>
               </div>
-            </div>
-            <div>
-              <button
-                type="submit"
-                className={style.button + " " + style.submit}
-              >
-                Submit the activity
-              </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
         <Footer></Footer>
       </div>

@@ -23,15 +23,16 @@ class Countries extends React.Component {
   }
   renderProduct = (country, activities) => {
     return (
-      <div>
+      <div className={style.big}>
+        {" "}
         <Country country={country} activities={activities} />
       </div>
     );
   };
   renderLoading = () => {
     return (
-      <div className={style.loadingdiv}>
-        <h1 className={style.loadingtext}>{this.state.loading}</h1>
+      <div className={style.loading}>
+        <h1>{this.state.loading}</h1>
       </div>
     );
   };
@@ -50,11 +51,11 @@ class Countries extends React.Component {
               Back
             </button>{" "}
           </a>
-        </div>
-        <div className={style.cards}>
-          {this.state.loading
-            ? this.renderLoading(this.state.loading)
-            : this.renderProduct(this.state.country, this.state.activities)}
+          <div className={style.cards}>
+            {this.state.loading
+              ? this.renderLoading(this.state.loading)
+              : this.renderProduct(this.state.country, this.state.activities)}
+          </div>{" "}
         </div>
         <Footer></Footer>
       </div>
