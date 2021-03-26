@@ -36,7 +36,11 @@ class App extends Component {
       <div className="App">
         {" "}
         <BrowserRouter>
-          <Route exact path="/" render={() => <Landing />} />
+          <Route
+            path="/"
+            exact
+            render={() => (window.location.href = "/countries/1")}
+          />
           <Route path="/country/:id" render={() => <MainCountry />} />
           <Route
             path="/countries/:id"

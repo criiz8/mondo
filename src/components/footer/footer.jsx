@@ -13,7 +13,7 @@ const Footer = () => {
     <div className={style.flex}>
       <footer className={style.bd_grid + " " + style.test}>
         <div>
-          <a href="/countries" className={style.icons}>
+          <a href="/countries/1" className={style.icons}>
             <FontAwesomeIcon icon={faGlobeAmericas} className={style.icons} />
           </a>
         </div>
