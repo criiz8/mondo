@@ -16,12 +16,12 @@ class Pagination extends React.Component {
     const location = window.location.href.split("/");
     let url;
     if (Number.isInteger(parseInt(location[6]))) {
-      url = `http://mondocountries.herokuapp.com/countries/paginate/${location[5]}`;
+      url = `https://mondocountries.herokuapp.com/countries/paginate/${location[5]}`;
       this.setState({ locationOrder: location[5] });
       this.setState({ pageNumber: parseInt(location[6]) });
     }
     if (Number.isInteger(parseInt(location[4]))) {
-      url = `http://mondocountries.herokuapp.com/countries/paginate/${location[3]}`;
+      url = `https://mondocountries.herokuapp.com/countries/paginate/${location[3]}`;
       this.setState({ locationOrder: location[3] });
       this.setState({ pageNumber: parseInt(location[4]) });
     }

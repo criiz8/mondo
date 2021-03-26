@@ -14,7 +14,7 @@ class Countries extends React.Component {
   };
   async componentDidMount() {
     const location = window.location.href.split("/")[4];
-    const url = `http://mondocountries.herokuapp.com/country/${location}`;
+    const url = `https://mondocountries.herokuapp.com/country/${location}`;
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ country: data.country });

@@ -11,13 +11,13 @@ class Countries extends React.Component {
   };
 
   async componentDidMount() {
-    let url = `http://mondocountries.herokuapp.com/countries/${location[4]}`;
+    let url = `https://mondocountries.herokuapp.com/countries/${location[4]}`;
     if (location[4] === "search") {
-      url = `http://mondocountries.herokuapp.com/countries/search/${location[5]}`;
+      url = `https://mondocountries.herokuapp.com/countries/search/${location[5]}`;
     } else if (location[5] === "popup" || location[5] === "popdown") {
-      url = `http://mondocountries.herokuapp.com/countries/`;
+      url = `https://mondocountries.herokuapp.com/countries/`;
     } else if (location[5]) {
-      url = `http://mondocountries.herokuapp.com/countries/order/${location[5]}/${location[6]}`;
+      url = `https://mondocountries.herokuapp.com/countries/order/${location[5]}/${location[6]}`;
     }
     const response = await fetch(url);
     let data = await response.json();

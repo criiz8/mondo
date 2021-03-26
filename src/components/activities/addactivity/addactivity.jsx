@@ -26,7 +26,7 @@ class AddActivity extends React.Component {
     this.handleCountriesChange = this.handleCountriesChange.bind(this);
   }
   async componentDidMount() {
-    let url = `http://mondocountries.herokuapp.com/countries/`;
+    let url = `https://mondocountries.herokuapp.com/countries/`;
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ countriesNames: data });
@@ -54,7 +54,7 @@ class AddActivity extends React.Component {
       alert("The form fields are incomplete!");
       e.preventDefault();
     } else {
-      fetch("http://mondocountries.herokuapp.com/addactivity", {
+      fetch("https://mondocountries.herokuapp.com/addactivity", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
