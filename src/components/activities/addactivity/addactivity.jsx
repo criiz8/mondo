@@ -8,7 +8,7 @@ import {
 import style from "./addactivity.module.css";
 import Nav from "../../nav/nav";
 import Footer from "../../footer/footer";
-
+const { REACT_APP_URL } = process.env;
 class AddActivity extends React.Component {
   constructor(props) {
     super(props);
@@ -26,8 +26,7 @@ class AddActivity extends React.Component {
     this.handleCountriesChange = this.handleCountriesChange.bind(this);
   }
   async componentDidMount() {
-    let url = `https://mondocountries.herokuapp.com/countries/`;
-    const response = await fetch(url);
+    const response = await fetch(`${REACT_APP_URL}/countries`);
     const data = await response.json();
     this.setState({ countriesNames: data });
   }
@@ -54,7 +53,7 @@ class AddActivity extends React.Component {
       alert("The form fields are incomplete!");
       e.preventDefault();
     } else {
-      fetch("https://mondocountries.herokuapp.com/addactivity", {
+      fetch(`${REACT_APP_URL}/addactivity`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

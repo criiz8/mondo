@@ -5,7 +5,7 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import style from "./pagination.module.css";
-
+const { REACT_APP_URL } = process.env;
 class Pagination extends React.Component {
   state = {
     locationOrder: "",
@@ -16,12 +16,12 @@ class Pagination extends React.Component {
     const location = window.location.href.split("/");
     let url;
     if (Number.isInteger(parseInt(location[6]))) {
-      url = `https://mondocountries.herokuapp.com/countries/paginate/${location[5]}`;
+      url = `${REACT_APP_URL}/countries/paginate/${location[5]}`;
       this.setState({ locationOrder: location[5] });
       this.setState({ pageNumber: parseInt(location[6]) });
     }
     if (Number.isInteger(parseInt(location[4]))) {
-      url = `https://mondocountries.herokuapp.com/countries/paginate/${location[3]}`;
+      url = `${REACT_APP_URL}/countries/paginate/${location[3]}`;
       this.setState({ locationOrder: location[3] });
       this.setState({ pageNumber: parseInt(location[4]) });
     }
