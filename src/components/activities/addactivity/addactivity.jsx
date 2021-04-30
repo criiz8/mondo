@@ -147,11 +147,12 @@ class AddActivity extends React.Component {
               <div>
                 <h2 className={style.durationh2}>Duration</h2>
                 <div>
-                  <div>
+                  <label for="duration">
+                    {" "}
                     {this.state.duration
                       ? this.state.duration + " minutes"
                       : "Select a duration"}
-                  </div>
+                  </label>
                   <input
                     type="range"
                     min="15"
