@@ -13,7 +13,11 @@ const Footer = () => {
     <div className={style.flex}>
       <footer className={style.bd_grid + " " + style.test}>
         <div>
-          <a href="/countries/1" className={style.icons}>
+          <a
+            href="/countries/1"
+            className={style.icons}
+            aria-label="Mondo Countries"
+          >
             <FontAwesomeIcon icon={faGlobeAmericas} className={style.icons} />
           </a>
         </div>
@@ -22,10 +26,18 @@ const Footer = () => {
           Mondo
         </div>
         <div>
-          <a className={style.ig} href="https://www.instagram.com/">
+          <a
+            className={style.ig}
+            href="https://www.instagram.com/"
+            aria-label="Instagram"
+          >
             <FontAwesomeIcon icon={faInstagram} className={style.icons} />
           </a>
-          <a className={style.icons} href="https://www.twitter.com/">
+          <a
+            className={style.icons}
+            href="https://www.twitter.com/"
+            aria-label="Twitter"
+          >
             <FontAwesomeIcon icon={faTwitter} className={style.icons} />
           </a>
         </div>

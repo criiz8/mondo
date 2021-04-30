@@ -61,6 +61,7 @@ class Pagination extends React.Component {
               : `/countries/${this.state.pageNumber - 1}`
           }
           className={this.state.pageNumber === 1 ? style.disabled : style.each}
+          aria-label="Paginate left"
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </a>
@@ -79,6 +80,7 @@ class Pagination extends React.Component {
                 ? style.disabled
                 : style.each
             }
+            aria-label="Paginate right"
           >
             <FontAwesomeIcon icon={faChevronRight} />
           </a>
