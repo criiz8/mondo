@@ -13,26 +13,30 @@ const Country = ({ country }) => {
         }
       >
         <div className={style.card}>
-          <img src={country.flag} className={style.card_img} />
+          <img
+            src={country.flag}
+            className={style.card_img}
+            alt={country.name}
+          />
           <ul className={style.card_items}>
             <li>
               <h3>{country.name}</h3>
             </li>
             <li>
-              <h5>Region: {country.region ? country.region : "-"}</h5>
+              <h4>Region: {country.region ? country.region : "-"}</h4>
             </li>
             <li>
-              <h5>Capital: {country.capital ? country.capital : "-"}</h5>
+              <h4>Capital: {country.capital ? country.capital : "-"}</h4>
             </li>
             <li>
-              <h5>
+              <h4>
                 Population:{" "}
                 {country.population
                   ? country.population
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                   : country.population}
-              </h5>
+              </h4>
             </li>
           </ul>
         </div>

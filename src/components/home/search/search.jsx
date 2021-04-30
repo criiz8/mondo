@@ -24,9 +24,13 @@ class Search extends React.Component {
                 ? "/search/" + this.props.searchField
                 : "/1"
             }`}
+            aria-label="Search button"
           >
             <div className={style.button}>
-              <button className={style.border + " " + style.pointer}>
+              <button
+                className={style.border + " " + style.pointer}
+                aria-label="Search icon"
+              >
                 <FontAwesomeIcon icon={faSearch} className={style.icon} />
               </button>
             </div>{" "}
