@@ -42,7 +42,7 @@ class Countries extends React.Component {
         <Nav></Nav>
         <div className={style.bd_grid}>
           {" "}
-          <a href={`${document.referrer}`}>
+          <a href={document.referrer}>
             <button className={style.back}>
               <FontAwesomeIcon
                 icon={faArrowLeft}

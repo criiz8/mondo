@@ -5,7 +5,7 @@ const Country = ({ country, activities }) => {
   return (
     <div className={style.data}>
       <div className={style.img}>
-        <img src={country.flag} />
+        <img src={country.flag} alt={country.name} />
       </div>
       <div>
         <ul>
@@ -13,34 +13,34 @@ const Country = ({ country, activities }) => {
             <h2 className={style.title}>{country.name}</h2>
           </li>
           <li>
-            <h4>ID: {country.alpha3code}</h4>
+            <h3>ID: {country.alpha3code}</h3>
           </li>
           <li>
-            <h4>Region: {country.region ? country.region : "-"}</h4>
+            <h3>Region: {country.region ? country.region : "-"}</h3>
           </li>
           <li>
-            <h4>SubRegion: {country.subregion ? country.subregion : "-"}</h4>
+            <h3>SubRegion: {country.subregion ? country.subregion : "-"}</h3>
           </li>
           <li>
-            <h4>Capital: {country.capital ? country.capital : "-"}</h4>
+            <h3>Capital: {country.capital ? country.capital : "-"}</h3>
           </li>
           <li>
-            <h4>
+            <h3>
               Area:{" "}
               {country.area
                 ? country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                 : country.area}
-            </h4>
+            </h3>
           </li>
           <li>
-            <h4>
+            <h3>
               Population:{" "}
               {country.population
                 ? country.population
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                 : country.population}
-            </h4>
+            </h3>
           </li>
         </ul>
       </div>
@@ -55,11 +55,11 @@ const Country = ({ country, activities }) => {
             {activities.length > 0
               ? activities.map((activity) => {
                   return (
-                    <h4>
+                    <h3>
                       {activity.title}: It has a difficulty of{" "}
                       {activity.difficulty} stars, lasts for {activity.duration}{" "}
                       minutes and it's in the {activity.season}
-                    </h4>
+                    </h3>
                   );
                 })
               : "This country doesn't have any activity."}
