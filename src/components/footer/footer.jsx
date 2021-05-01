@@ -22,8 +22,7 @@ const Footer = () => {
           </a>
         </div>
         <div className={style.text}>
-          2021 <FontAwesomeIcon icon={faCopyright} className={style.copy} />
-          Mondo
+          Made by <a href="https://cristianariza.tech">Cristian Ariza</a>
         </div>
         <div>
           <a
