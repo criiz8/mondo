@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         <div className={style.text}>
           Made by{" "}
-          <a href="https://cristianariza.tech" style={{ color: white }}>
+          <a href="https://cristianariza.tech" style={{ color: "#afafaf" }}>
             Cristian Ariza
           </a>
         </div>
